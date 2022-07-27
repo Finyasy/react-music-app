@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-const MusicForm = () => {
+const MusicForm = ({onAdd}) => {
   const [newMusic, setNewMusic] = useState({
     songName: "",
     artist: "",
@@ -15,6 +15,7 @@ const MusicForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
+    onAdd(newMusic);
     setNewMusic(
       {
         songName: "",
@@ -44,6 +45,12 @@ const MusicForm = () => {
         name="Ratings"
         value={newMusic.Ratings}
         placeholder="Ratings"
+      />
+      <input
+        onChange={handleChange}
+        name="images"
+        value={newMusic.image}
+        placeholder="images"
       />
       <textarea
         onChange={handleChange}
