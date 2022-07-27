@@ -4,6 +4,7 @@ import MusicItem from "./Components/MusicItem";
 import MusicForm from "./Components/MusicForm";
 
 function App() {
+  const [showAddMusic, setShowAddMusic] = useState(false);
   const [musics, setMusic] = useState([
     {
       id: 1,
@@ -19,7 +20,7 @@ function App() {
       songName: "London",
       artist: "Jcole",
       lyrics: "I'm in London, I like to go to shop in the mall (Yeah)",
-      Ratings:" 7 / 10",
+      Ratings: " 7 / 10",
       image: "/pictures/jcole.png",
     },
   ]);
@@ -27,7 +28,7 @@ function App() {
   const addMusic = (music) => {
     const id = Math.floor(Math.random() * 10000) + 1;
     setMusic([...musics, { ...music, id }]);
-  }
+  };
 
   const deleteMusic = (id) => {
     setMusic(musics.filter((music) => music.id !== id));
@@ -35,15 +36,16 @@ function App() {
 
   return (
     <div className="App">
-      <MusicForm onAdd={addMusic} />
-      <div>
-        <Header title="Music Tracker" />
-        {musics.length > 0 ? (
-          <MusicItem musics={musics} onDelete={deleteMusic} />
-        ) : (
-          <h1>No Music</h1>
-        )}
-      </div>
+      <Header
+        title="Music Tracker"
+        onAdd={() => setShowAddMusic(!showAddMusic)}
+      />
+      {showAddMusic && <MusicForm onAdd={addMusic} />}
+      {musics.length > 0 ? (
+        <MusicItem musics={musics} onDelete={deleteMusic} />
+      ) : (
+        <h1>No Music</h1>
+      )}
     </div>
   );
 }
