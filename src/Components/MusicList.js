@@ -1,15 +1,19 @@
 import React from "react";
-import {FaTimes} from 'react-icons/fa';
+import { FaTimes } from "react-icons/fa";
 
-const MusicList = ({music}) => {
+const MusicList = ({ music, onDelete }) => {
   return (
     <div className="List">
-      <h1>{music.songName} <FaTimes style={{color:'red', cursor:'pointer'}}  />
-       </h1>
-      <h2>{music.artist}</h2>
+      <h1>
+        {music.songName} by {music.artist}
+        <FaTimes
+          style={{ color: "red", cursor: "pointer" }}
+          onClick={() => onDelete(music.id)}
+        />
+      </h1>
       <p>{music.lyrics}</p>
-      <p>{music.Ratings}</p>
-      <img src={music.image} alt="" />
+      <h1>{music.Ratings}</h1>
+      <img className="photo" src={music.image} height={250} width={250} alt="" />
     </div>
   );
 };
