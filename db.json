@@ -1,0 +1,20 @@
+{
+  "musics": [
+    {
+      "id": 1,
+      "songName": "Wait For U",
+      "artist": "Future,Drake n Tems",
+      "lyrics": "I will wait for you, for you Early in the mornin', late at night (I will wait for you)It don't even matter what time it is (I will wait for you)",
+      "Ratings": "9/10",
+      "image": "/pictures/future.jpeg"
+    },
+    {
+      "id": 2,
+      "songName": "Mask Off",
+      "artist": "Jcole",
+      "lyrics": "Dreamer, Dreamer, runnin' the game in my signature trainers Balenciaga for joggers, I might just wear Crocs at the O2 arena Splendid, got no limits, should have a tank on my pendant",
+      "Ratings": "7/10",
+      "image": "/pictures/jcole.png"
+    }
+  ]
+}
