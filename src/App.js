@@ -1,7 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import MusicItem from "./Components/MusicItem";
 import MusicForm from "./Components/MusicForm";
+import About from "./Components/About";
+import Footer from "./Components/Footer";
 
 function App() {
   const [showAddMusic, setShowAddMusic] = useState(false);
@@ -11,7 +14,7 @@ function App() {
     const getMusic = async () => {
       const musicsFromServer = await fetchMusics();
       setMusic(musicsFromServer);
-    }
+    };
 
     getMusic();
   }, []);
@@ -21,29 +24,29 @@ function App() {
     const res = await fetch("http://localhost:5000/musics");
     const data = await res.json();
 
-    return data
-  }
+    return data;
+  };
 
-  const addMusic = async(newMusic) => {
-    const res =await fetch("http://localhost:5000/musics", {
+  const addMusic = async (newMusic) => {
+    const res = await fetch("http://localhost:5000/musics", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newMusic)
+      body: JSON.stringify(newMusic),
     });
 
     const data = await res.json();
     setMusic([...musics, data]);
 
-  //   const id = Math.floor(Math.random() * 10000) + 1;
-  //   setMusic([...musics, { ...music, id }]);
-  // 
-};
+    //   const id = Math.floor(Math.random() * 10000) + 1;
+    //   setMusic([...musics, { ...music, id }]);
+    //
+  };
 
-  const deleteMusic = async(id) => {
+  const deleteMusic = async (id) => {
     await fetch(`http://localhost:5000/musics/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     });
 
     setMusic(musics.filter((music) => music.id !== id));
@@ -57,6 +60,15 @@ function App() {
         showAdd={showAddMusic}
       />
       {showAddMusic && <MusicForm onAdd={addMusic} />}
+      <Routes>
+        <Route path='/' exact render={(props) => (
+          <>
+          
+          </>
+        ) } />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
       {musics.length > 0 ? (
         <MusicItem musics={musics} onDelete={deleteMusic} />
       ) : (
