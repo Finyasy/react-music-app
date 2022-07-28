@@ -1,11 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-const MusicForm = ({onAdd}) => {
+const MusicForm = ({ onAdd }) => {
   const [newMusic, setNewMusic] = useState({
     songName: "",
     artist: "",
     lyrics: "",
-    Ratings: "",   
+    Ratings: "",
+    image: "",
   });
 
   function handleChange(event) {
@@ -16,18 +17,17 @@ const MusicForm = ({onAdd}) => {
   function handleSubmit(event) {
     event.preventDefault();
     onAdd(newMusic);
-    setNewMusic(
-      {
-        songName: "",
-        artist: "",
-        lyrics: "",
-        Ratings: "",
-      }
-    )
+    setNewMusic({
+      songName: "",
+      artist: "",
+      lyrics: "",
+      Ratings: "",
+      image: "",
+    });
   }
 
   return (
-    <form onSubmit={handleSubmit} >
+    <form onSubmit={handleSubmit}>
       <input
         onChange={handleChange}
         name="songName"
