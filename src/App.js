@@ -24,10 +24,22 @@ function App() {
     return data
   }
 
-  const addMusic = (music) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
-    setMusic([...musics, { ...music, id }]);
-  };
+  const addMusic = async(newMusic) => {
+    const res =await fetch("http://localhost:5000/musics", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newMusic)
+    });
+
+    const data = await res.json();
+    setMusic([...musics, data]);
+
+  //   const id = Math.floor(Math.random() * 10000) + 1;
+  //   setMusic([...musics, { ...music, id }]);
+  // 
+};
 
   const deleteMusic = async(id) => {
     await fetch(`http://localhost:5000/musics/${id}`, {
