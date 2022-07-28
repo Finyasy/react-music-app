@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Header from "./Components/Header";
 import MusicItem from "./Components/MusicItem";
 import MusicForm from "./Components/MusicForm";
 
 function App() {
   const [showAddMusic, setShowAddMusic] = useState(false);
-  const [musics, setMusic] = useState([
-    {
-      id: 1,
-      songName: "Waiting For You",
-      artist: "Future ft. Drake, Tems",
-      lyrics:
-        "You pray for my demons, girl, I got you,Every time I sip on codeine.....",
-      Ratings: "9 / 10",
-      image: "/pictures/future.jpeg",
-    },
-    {
-      id: 2,
-      songName: "London",
-      artist: "Jcole",
-      lyrics: "I'm in London, I like to go to shop in the mall (Yeah)",
-      Ratings: " 7 / 10",
-      image: "/pictures/jcole.png",
-    },
-  ]);
+  const [musics, setMusic] = useState([]);
+
+  useEffect(() => {
+    const getMusic = async () => {
+      const musicsFromServer = await fetchMusics();
+      setMusic(musicsFromServer);
+    }
+
+    getMusic();
+  }, []);
+
+  // Fetch music
+  const fetchMusics = async () => {
+    const res = await fetch("http://localhost:5000/musics");
+    const data = await res.json();
+
+    return data
+  }
 
   const addMusic = (music) => {
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -39,6 +38,7 @@ function App() {
       <Header
         title="Music Tracker"
         onAdd={() => setShowAddMusic(!showAddMusic)}
+        showAdd={showAddMusic}
       />
       {showAddMusic && <MusicForm onAdd={addMusic} />}
       {musics.length > 0 ? (
