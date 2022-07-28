@@ -29,7 +29,11 @@ function App() {
     setMusic([...musics, { ...music, id }]);
   };
 
-  const deleteMusic = (id) => {
+  const deleteMusic = async(id) => {
+    await fetch(`http://localhost:5000/musics/${id}`, {
+      method: "DELETE"
+    });
+
     setMusic(musics.filter((music) => music.id !== id));
   };
 
