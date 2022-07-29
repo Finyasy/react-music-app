@@ -1,6 +1,7 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: sans-serif;
+  background-color: #d1d6d5;
 }
 
 .app {
@@ -68,4 +69,24 @@ form.new-music-form > textarea {
   font-size: 1em;
   font-family: sans-serif;
   margin-bottom: 0.5em;
+}
+
+input[type="submit"],
+button {
+  font-weight: bold;
+  font-size: 1em;
+  background: #1a9dba;
+  border: solid black 1px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.sidebar {
+  margin: auto;
+  min-height: 100vh;
+  min-width: 12em;
+  width: 50%;
+  border-right: solid black 1px;
+  background: #82c8c8;
+  padding: 1em;
 }
