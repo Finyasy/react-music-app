@@ -1,3 +1,21 @@
+# Music Lyrics App
+
+## By Bryan Bosire
+
+### Landing page
+
+![Music App1](./client/src/images/tech-blogan.png)
+
+![Music App1](./client/src/images/tech-blogan.png)
+
+# Live Link
+
+Click this link [https://react-music-app1.netlify.app/](https://react-music-app1.netlify.app/) to view the live website.
+
+## Description
+
+This is a music lyric app that lets the user add new music lyrics according to his/her taste and preference.In the long run the user can keep track of different music and their ratings according to posted lyrics.Lyrics are like a poem lines for me,they are educative and soothing.The project was deployed to Netlify and It allows for Continous Deployment. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -34,3 +52,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## License
+
+MIT License
+
+Copyright (c) [2022] [Bryan Bosire]
