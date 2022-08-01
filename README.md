@@ -1,3 +1,13 @@
+# Music Lyrics App
+
+## By Bryan Bosire
+
+### Music Lyrics App landing page
+
+![Music App1](./client/src/images/tech-blogan.png)
+
+![Music App1](./client/src/images/tech-blogan.png)
+
 # Live Link
 
 Click this link [https://react-music-app1.netlify.app/](https://react-music-app1.netlify.app/) to view the live website.
