@@ -4,9 +4,7 @@
 
 ### Landing page
 
-![Music App1](./client/src/images/tech-blogan.png)
-
-![Music App1](./client/src/images/tech-blogan.png)
+![Music App1](./public/pictures/lyrics.png)
 
 # Live Link
 
