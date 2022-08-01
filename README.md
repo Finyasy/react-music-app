@@ -6,6 +6,9 @@
 
 ![Music App1](./public/pictures/lyrics.png)
 
+### Design Page
+![Design](./public/pictures/Design.png)
+
 # Live Link
 
 Click this link [https://react-music-app1.netlify.app/](https://react-music-app1.netlify.app/) to view the live website.
