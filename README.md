@@ -2,6 +2,10 @@
 
 Click this link [https://react-music-app1.netlify.app/](https://react-music-app1.netlify.app/) to view the live website.
 
+## Description
+
+This is a music lyric app that lets the user add new music lyrics according to his/her taste and preference.In the long run the user can keep track of different music and their ratings according to posted lyrics.Lyrics are like a poem lines for me,they are educative and soothing.The project was deployed to Netlify and It allows for Continous Deployment. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
