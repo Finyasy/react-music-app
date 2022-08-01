@@ -16,8 +16,8 @@ const MusicList = ({ music, onDelete }) => {
       <img
         className="photo"
         src={music.image}
-        height={250}
-        width={250}
+        height={300}
+        width={300}
         alt=""
       />
     </div>
