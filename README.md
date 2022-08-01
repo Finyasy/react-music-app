@@ -2,7 +2,7 @@
 
 ## By Bryan Bosire
 
-### Music Lyrics App landing page
+### Landing page
 
 ![Music App1](./client/src/images/tech-blogan.png)
 
