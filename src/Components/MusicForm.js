@@ -27,18 +27,18 @@ const MusicForm = ({ onAdd }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="new-music-form" onSubmit={handleSubmit}>
       <input
         onChange={handleChange}
         name="songName"
         value={newMusic.songName}
-        placeholder="songName"
+        placeholder="Music Name"
       />
       <input
         onChange={handleChange}
         name="artist"
         value={newMusic.artist}
-        placeholder="artist"
+        placeholder="Artist"
       />
       <input
         onChange={handleChange}
@@ -50,7 +50,7 @@ const MusicForm = ({ onAdd }) => {
         onChange={handleChange}
         name="images"
         value={newMusic.image}
-        placeholder="images"
+        placeholder="Image"
       />
       <textarea
         onChange={handleChange}
