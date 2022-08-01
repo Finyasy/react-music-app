@@ -3,8 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import MusicItem from "./Components/MusicItem";
 import MusicForm from "./Components/MusicForm";
-import About from "./Components/About";
 import Footer from "./Components/Footer";
+import About from "./Components/Pages/About";
+import Contact from "./Components/Pages/Contact";
+import Home from "./Components/Pages/Home";
 
 function App() {
   const [showAddMusic, setShowAddMusic] = useState(false);
@@ -54,26 +56,26 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        title="Music Tracker"
-        onAdd={() => setShowAddMusic(!showAddMusic)}
-        showAdd={showAddMusic}
-      />
-      {showAddMusic && <MusicForm onAdd={addMusic} />}
-      <Routes>
-        <Route path='/' exact render={(props) => (
-          <>
-          
-          </>
-        ) } />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer />
-      {musics.length > 0 ? (
-        <MusicItem musics={musics} onDelete={deleteMusic} />
-      ) : (
-        <h1>No Music</h1>
-      )}
+      <div className="sidebar">
+        <Header
+          title="Music Lyrics Tracker"
+          onAdd={() => setShowAddMusic(!showAddMusic)}
+          showAdd={showAddMusic}
+        />
+        {showAddMusic && <MusicForm onAdd={addMusic} />}
+        {musics.length > 0 ? (
+          <MusicItem musics={musics} onDelete={deleteMusic} />
+        ) : (
+          <h1>No Music</h1>
+        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/about" element={<About />} />
+          {/* <Route path="*" element={<ErrorPage/>} /> */}
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }
